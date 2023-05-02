@@ -13,10 +13,10 @@ $student = Student::getById($student_id);
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Edit Pet</title>
+	<title>Edit Student</title>
 </head>
 <body>
-<h1>Edit Pet</h1>
+<h1>Edit Student</h1>
 
 <form action="save-changes.php" method="POST">
 	<input type="hidden" name="id" value="<?php echo $student->getId(); ?>">
