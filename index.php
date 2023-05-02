@@ -23,11 +23,22 @@ $Pets = Pet::list();
 	<a href="edit-pet.php?id=<?php echo $Pet->getId(); ?>">EDIT</a>
 </td>
 <td>
-	<a href="delete-pet.php?id=<?php echo $Pet->getId(); ?>">DELETE</a>
+	
+	<a href="delete-pet.php?id=<?php echo $Pet->getId(); ?>" class="confirmation">DELETE</a>
 </td>
 </tr>
 <?php endforeach ?>
 
 </tr>
 </table>
-<a href="truncate-table.php?id=<?php echo $Pet->getId(); ?>">TRUNCATE</a>
+<a href="truncate-table.php?id=<?php echo $Pet->getId(); ?>" class="confirmation">TRUNCATE</a>
+
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Are you sure?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>
